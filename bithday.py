@@ -26,6 +26,10 @@ def get_birthdays_per_week(users):
     for user in users:
         name = user['name']
         birthday = user['birthday'].date()
+        
+         # Визначаємо дату народження з поточним роком
+        birthday_this_year = datetime(
+            today.year, birthday.month, birthday.day).date()
 
         # Перевіряємо, чи день народження користувача потрапляє в поточний тиждень
         if start_of_week <= birthday <= end_of_week:
